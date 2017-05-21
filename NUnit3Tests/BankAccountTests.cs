@@ -44,5 +44,48 @@ namespace NUnit3Tests
             });
         }
 
+        // Write five more tests against BankAccount that test its functionality. Use five different type of asserts for these tests:
+        // 1. not instantiated
+        [Test]
+        public void TestBankAccountInstantiation()
+        {
+            var bankAccount = new BankAcount(3000);
+            Assert.That(bankAccount, Is.Not.Null);
+        }
+
+        // 2. less than - when withdrawing
+        [Test]
+        public void TestBankAccountWithdrawLessThan()
+        {
+            var bankAccount = new BankAcount(3000);
+            bankAccount.Withdraw(300);
+            Assert.That(bankAccount.Amount, Is.LessThan(2700));
+        }
+
+        // 3. is in range - when withdrawing
+        [Test]
+        public void TestBankAccountWithdrawInRange()
+        {
+            var bankAccount = new BankAcount(3000);
+            bankAccount.Withdraw(300);
+            Assert.That(bankAccount.Amount, Is.InRange(2700 - 2700 * 0.5m, 2700));
+        }
+
+        // 4. instance of
+        [Test]
+        public void TestBankAccountIsInstanceOf()
+        {
+            var bankAccount = new BankAcount(3000);
+            Assert.That(bankAccount, Is.InstanceOf<BankAcount>());
+        }
+
+        // 5. is not a NaN
+        [Test]
+        public void TestBankAccountWithdrawIsNotNaN()
+        {
+            var bankAccount = new BankAcount(3000);
+            bankAccount.Withdraw(300);
+            Assert.That(bankAccount.Amount, Is.Not.NaN);
+        }
     }
 }
