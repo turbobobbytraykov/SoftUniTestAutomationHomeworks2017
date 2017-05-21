@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoQARegistrationPageTests.cs" />
     <Compile Include="GoogleSearchTest.cs" />
     <Compile Include="QAAutomationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

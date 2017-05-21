@@ -21,7 +21,6 @@ namespace SeleniumBasicTests
         [Test]
         public void TestQAAutomationCoursePageHeadings()
         {
-
             string coursesMenuItemLinkSelector = "//ul[contains(@class, 'nav-list')]/li//span[text() = 'Обучения']/ancestor::a";
             string qaAutomationCourseLinkSelector = "//ul[contains(@class, 'category-list sub-menu')]/li/a[text() = 'QA Automation - март 2017']";
 
