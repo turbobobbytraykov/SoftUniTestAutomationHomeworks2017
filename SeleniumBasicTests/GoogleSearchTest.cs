@@ -39,7 +39,7 @@ namespace SeleniumBasicTests
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 wait.Until(d => d.Title.StartsWith("Selenium", StringComparison.OrdinalIgnoreCase));
 
-                IWebElement firstResult = driver.FindElement(By.CssSelector("div#search div.g:first-of-type a:first-of-type"));
+                IWebElement firstResult = driver.FindElement(By.CssSelector("div.srg div.g:first-of-type a:first-of-type"));
                 firstResult.Click();
                 wait.Until(d => !d.Title.ToLowerInvariant().Contains("google"));
 
